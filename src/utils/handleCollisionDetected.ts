@@ -8,12 +8,14 @@ function handleCollisionDetected(data: ICollisionDetectedProps) {
 
   if (!element1Rect || !element2Rect) return;
 
-  return !(
+  const isCollision = !(
     element1Rect.top + element1Rect.height < element2Rect.top ||
     element1Rect.top > element2Rect.top + element2Rect.height ||
     element1Rect.left + element1Rect.width < element2Rect.left ||
     element1Rect.left > element2Rect.left + element2Rect.width
   );
+
+  return isCollision;
 }
 
 export default handleCollisionDetected;
